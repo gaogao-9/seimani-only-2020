@@ -7,9 +7,18 @@ type Props = {
 
 const DefaultTemplate: React.FC<Props> = ({ children }) => {
   React.useEffect(() => {
-    const vh = window.innerHeight * 0.01;
+    const onResize = (): void => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    };
 
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
+    onResize();
+
+    window.addEventListener("resize", onResize, { passive: true });
+
+    return (): void => {
+      window.removeEventListener("resize", onResize);
+    };
   }, []);
 
   return (
