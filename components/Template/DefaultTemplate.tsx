@@ -34,6 +34,7 @@ const DefaultTemplate: React.FC<Props> = ({ children }) => {
           type="text/css"
           href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:200&display=swap"
         />
+        <link rel="stylesheet" type="text/css" href="/global.css" />
       </Head>
       {children}
     </>
