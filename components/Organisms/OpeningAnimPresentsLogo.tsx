@@ -30,9 +30,10 @@ const FadeAnimation = keyframes`
 
 const Text = styled.span`
   color: #ffffff;
+  font-family: "Noto Serif JP", serif;
   font-size: 5vw;
   animation: ${FadeAnimation} 1s ease 1s 1 both reverse,
-    ${FadeAnimation} 1s ease 3s 1 forwards, nullAnimation 1s ease 4s 1 forwards;
+    ${FadeAnimation} 1s ease 3s 1 forwards;
 `;
 
 const AnimCharacterCutin: React.FC = () => {

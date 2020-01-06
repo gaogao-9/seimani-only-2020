@@ -5,7 +5,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-const DefaultTempate: React.FC<Props> = ({ children }) => (
+const DefaultTemplate: React.FC<Props> = ({ children }) => (
   <>
     <Head>
       <link
@@ -13,9 +13,14 @@ const DefaultTempate: React.FC<Props> = ({ children }) => (
         type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
       />
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:200&display=swap"
+      />
     </Head>
     {children}
   </>
 );
 
-export default DefaultTempate;
+export default DefaultTemplate;

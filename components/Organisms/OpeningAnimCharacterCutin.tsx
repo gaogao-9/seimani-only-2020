@@ -190,6 +190,7 @@ const CharacterB = styled(Character)`
 `;
 
 const Text: React.FC = styled.span`
+  font-family: "Noto Serif JP", serif;
   font-size: 5vw;
 `;
 
