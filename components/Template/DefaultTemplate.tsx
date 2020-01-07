@@ -6,10 +6,13 @@ type Props = {
 };
 
 const DefaultTemplate: React.FC<Props> = ({ children }) => {
+  const [vh, setVh] = React.useState(0);
+
   React.useEffect(() => {
     const updateVH = (): void => {
       const vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty("--vh", `${vh}px`);
+      setVh(vh);
     };
 
     updateVH();
@@ -31,7 +34,7 @@ const DefaultTemplate: React.FC<Props> = ({ children }) => {
     return (): void => {
       window.removeEventListener("resize", onResize);
     };
-  }, []);
+  }, [vh]);
 
   return (
     <>
