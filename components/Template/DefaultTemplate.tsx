@@ -6,13 +6,10 @@ type Props = {
 };
 
 const DefaultTemplate: React.FC<Props> = ({ children }) => {
-  const [vh, setVh] = React.useState(0);
-
   React.useEffect(() => {
     const updateVH = (): void => {
       const vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty("--vh", `${vh}px`);
-      setVh(vh);
     };
 
     updateVH();
@@ -26,7 +23,7 @@ const DefaultTemplate: React.FC<Props> = ({ children }) => {
       timerId = window.setTimeout(() => {
         updateVH();
         timerId = null;
-      }, 500);
+      }, 200);
     };
 
     window.addEventListener("resize", onResize);
@@ -34,7 +31,7 @@ const DefaultTemplate: React.FC<Props> = ({ children }) => {
     return (): void => {
       window.removeEventListener("resize", onResize);
     };
-  }, [vh]);
+  }, []);
 
   return (
     <>
@@ -49,7 +46,6 @@ const DefaultTemplate: React.FC<Props> = ({ children }) => {
           type="text/css"
           href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:200&display=swap"
         />
-        <link rel="stylesheet" type="text/css" href="/global.css" />
       </Head>
       {children}
     </>
