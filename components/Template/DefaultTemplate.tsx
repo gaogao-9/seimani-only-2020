@@ -29,7 +29,7 @@ const DefaultTemplate: React.FC<Props> = ({ children }) => {
       }, 500);
     };
 
-    window.addEventListener("resize", onResize, { passive: true });
+    window.addEventListener("resize", onResize);
 
     return (): void => {
       window.removeEventListener("resize", onResize);
