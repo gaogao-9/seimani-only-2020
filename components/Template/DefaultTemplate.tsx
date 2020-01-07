@@ -23,8 +23,7 @@ const DefaultTemplate: React.FC<Props> = ({ children }) => {
       timerId = window.setTimeout(() => {
         updateVH();
         timerId = null;
-        alert(`update! vh: ${window.innerHeight * 0.01}`);
-      }, 200);
+      }, 500);
     };
 
     window.addEventListener("resize", onResize, { passive: true });
