@@ -23,14 +23,13 @@ const DefaultTemplate: React.FC<Props> = ({ children }) => {
       timerId = window.setTimeout(() => {
         updateVH();
         timerId = null;
+        alert(`update! vh: ${window.innerHeight * 0.01}`);
       }, 200);
     };
 
-    window.addEventListener("orientationchange", onResize, { passive: true });
     window.addEventListener("resize", onResize, { passive: true });
 
     return (): void => {
-      window.addEventListener("orientationchange", onResize, { passive: true });
       window.removeEventListener("resize", onResize);
     };
   }, []);

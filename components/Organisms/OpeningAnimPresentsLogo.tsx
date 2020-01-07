@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
-import { media } from "@/utils/media";
 import { keyframes } from "@emotion/core";
 import {
   Scenes,
