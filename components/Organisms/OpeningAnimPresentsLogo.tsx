@@ -47,9 +47,17 @@ const AnimCharacterCutin: React.FC = () => {
   }, [animationEndCount]);
 
   React.useEffect(() => {
+    let timerId: number | null = null;
+
     if (animationEndCount === 2) {
-      setTimeout(() => setScene(Scenes.Finish), 500);
+      timerId = window.setTimeout(() => setScene(Scenes.Finish), 500);
     }
+
+    return (): void => {
+      if (typeof timerId !== "number") return;
+
+      clearTimeout(timerId);
+    };
   }, [Math.floor(animationEndCount / 2)]);
 
   return (
