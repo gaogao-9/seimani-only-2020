@@ -1,8 +1,8 @@
-import DefaultTemplate from "@/components/Template/DefaultTemplate";
+import Template from "@/components/Template/SiteTemplate";
 const Home = (): JSX.Element => (
-  <DefaultTemplate>
+  <Template>
     <h1>トップページ</h1>
-  </DefaultTemplate>
+  </Template>
 );
 
 export default Home;

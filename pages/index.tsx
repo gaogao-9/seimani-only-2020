@@ -2,7 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import { media } from "@/utils/media";
 import { useRouter } from "next/router";
-import DefaultTemplate from "@/components/Template/DefaultTemplate";
+import Template from "@/components/Template/DefaultTemplate";
 import OpeningAnimCharacterCutin from "@/components/Organisms/OpeningAnimCharacterCutin";
 import OpeningAnimPresentsLogo from "@/components/Organisms/OpeningAnimPresentsLogo";
 import {
@@ -51,13 +51,13 @@ const Page: React.FC = () => {
   }
 
   return (
-    <DefaultTemplate>
+    <Template>
       <Background>
         <OpeningSceneContext.Provider value={openingSceneContextValue}>
           {SceneElement}
         </OpeningSceneContext.Provider>
       </Background>
-    </DefaultTemplate>
+    </Template>
   );
 };
 
