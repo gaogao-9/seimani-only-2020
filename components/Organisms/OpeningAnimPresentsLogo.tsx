@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/core";
 import {
-  Scenes,
+  OpeningScenes,
   OpeningSceneContextValue,
   OpeningSceneContext,
-} from "@/contexts/OpeningSceneContext";
+} from "@/hooks/contexts/OpeningSceneContext";
 
 const Container = styled.div`
   flex: auto;
@@ -40,9 +40,7 @@ const AnimCharacterCutin: React.FC = () => {
   const { setScene }: OpeningSceneContextValue = React.useContext(
     OpeningSceneContext,
   );
-  const onAnimationEnd: () => ReturnType<
-    typeof setScene
-  > = React.useCallback(() => {
+  const onAnimationEnd = React.useCallback(() => {
     setAnimationEndCount(animationEndCount + 1);
   }, [animationEndCount]);
 
@@ -50,7 +48,7 @@ const AnimCharacterCutin: React.FC = () => {
     let timerId: number | null = null;
 
     if (animationEndCount === 2) {
-      timerId = window.setTimeout(() => setScene(Scenes.Finish), 500);
+      timerId = window.setTimeout(() => setScene(OpeningScenes.Finish), 500);
     }
 
     return (): void => {

@@ -6,10 +6,10 @@ import Template from "@/components/Template/DefaultTemplate";
 import OpeningAnimCharacterCutin from "@/components/Organisms/OpeningAnimCharacterCutin";
 import OpeningAnimPresentsLogo from "@/components/Organisms/OpeningAnimPresentsLogo";
 import {
-  Scenes,
+  OpeningScenes,
   OpeningSceneContext,
-  OpeningSceneContextValue,
-} from "@/contexts/OpeningSceneContext";
+  useOpeningSceneContext,
+} from "@/hooks/contexts/OpeningSceneContext";
 
 const Background = styled.div`
   display: flex;
@@ -28,25 +28,23 @@ const Background = styled.div`
 
 const Page: React.FC = () => {
   const router = useRouter();
-  const [scene, setScene] = React.useState(Scenes.CharacterCutin);
-  const openingSceneContextValue: OpeningSceneContextValue = {
-    scene,
-    setScene,
-  };
+  const openingSceneContextValue = useOpeningSceneContext(
+    OpeningScenes.CharacterCutin,
+  );
   const EmptyElement: JSX.Element = React.useMemo(() => <></>, []);
 
   const SceneElement = ((): JSX.Element => {
-    switch (scene) {
-      case Scenes.CharacterCutin:
+    switch (openingSceneContextValue.scene) {
+      case OpeningScenes.CharacterCutin:
         return <OpeningAnimCharacterCutin />;
-      case Scenes.PresentsLogo:
+      case OpeningScenes.PresentsLogo:
         return <OpeningAnimPresentsLogo />;
       default:
         return EmptyElement;
     }
   })();
 
-  if (scene === Scenes.Finish) {
+  if (openingSceneContextValue.scene === OpeningScenes.Finish) {
     router.push("/top");
   }
 

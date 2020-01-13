@@ -3,10 +3,10 @@ import styled from "@emotion/styled";
 import { media } from "@/utils/media";
 import { keyframes } from "@emotion/core";
 import {
-  Scenes,
+  OpeningScenes,
   OpeningSceneContextValue,
   OpeningSceneContext,
-} from "@/contexts/OpeningSceneContext";
+} from "@/hooks/contexts/OpeningSceneContext";
 
 const BrandishAnimation = (
   orientation: "landscape" | "portrait",
@@ -198,8 +198,10 @@ const AnimCharacterCutin: React.FC = () => {
   const { setScene }: OpeningSceneContextValue = React.useContext(
     OpeningSceneContext,
   );
-  const onAnimationEnd: () => ReturnType<typeof setScene> = () =>
-    setScene(Scenes.PresentsLogo);
+  const onAnimationEnd = React.useCallback(
+    () => setScene(OpeningScenes.PresentsLogo),
+    [],
+  );
 
   return (
     <>
