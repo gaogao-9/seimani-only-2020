@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import styled from "@emotion/styled";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
@@ -8,6 +9,8 @@ import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
+import Typography from "@material-ui/core/Typography";
+import Box from "@material-ui/core/Box";
 import { SideDrawerContext } from "@/hooks/contexts/SideDrawerContext";
 import { theme } from "@/utils/theme";
 import { routes } from "@/utils/routes";
@@ -26,18 +29,24 @@ const SideList: React.FC<SideListProps> = (props: SideListProps) => (
         return (
           <Link href={href} key={index}>
             {canButton ? (
-              <ListItem button={canButton}>
+              <ListItem button={true}>
                 <ListItemIcon>
                   <Icon />
                 </ListItemIcon>
                 <ListItemText primary={title} />
               </ListItem>
             ) : (
-              <ListItem selected>
+              <ListItem button={false as true}>
                 <ListItemIcon>
                   <Icon />
                 </ListItemIcon>
-                <ListItemText primary={title} />
+                <ListItemText>
+                  <Typography>
+                    <Box color="#0576c5" fontWeight="bold">
+                      {title}
+                    </Box>
+                  </Typography>
+                </ListItemText>
               </ListItem>
             )}
           </Link>
