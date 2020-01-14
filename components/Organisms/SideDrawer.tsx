@@ -82,7 +82,7 @@ const SideDrawer: React.FC = () => {
       open={visibility}
       onClose={onClose}
     >
-      <SideList route={router.route} />
+      <SideList route={router.pathname} />
     </Drawer>
   );
 };

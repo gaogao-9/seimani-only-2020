@@ -25,7 +25,7 @@ const SiteBar: React.FC = () => {
     ? "h6"
     : "subtitle1";
   const TopLink = React.useMemo(() => {
-    const isTop = router.route === "/top";
+    const isTop = router.pathname === "/top";
     const title = "政剣マニフェスティアオンリー同人誌即売会 緊急交流イベント";
 
     if (isTop) {
@@ -37,7 +37,7 @@ const SiteBar: React.FC = () => {
         </Link>
       );
     }
-  }, [router.route]);
+  }, [router.pathname]);
 
   return (
     <AppBar position="static">
