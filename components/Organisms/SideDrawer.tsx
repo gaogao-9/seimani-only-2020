@@ -23,24 +23,28 @@ const SideList: React.FC<SideListProps> = (props: SideListProps) => (
     <List>
       {routes.map(({ title, href, Icon }, index) => {
         const canButton = href !== props.route;
+        const AppIcon = React.useMemo(
+          () => (
+            <ListItemIcon>
+              <Icon />
+            </ListItemIcon>
+          ),
+          [],
+        );
 
         return (
           <Link href={href} key={index}>
             {canButton ? (
               <ListItem button={true}>
-                <ListItemIcon>
-                  <Icon />
-                </ListItemIcon>
+                {AppIcon}
                 <ListItemText primary={title} />
               </ListItem>
             ) : (
               <ListItem button={false as true}>
-                <ListItemIcon>
-                  <Icon />
-                </ListItemIcon>
+                {AppIcon}
                 <ListItemText>
                   <Typography>
-                    <Box color="#0576c5" fontWeight="bold">
+                    <Box component="span" color="#0576c5" fontWeight="bold">
                       {title}
                     </Box>
                   </Typography>

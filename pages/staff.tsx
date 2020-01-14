@@ -5,9 +5,9 @@ import Title from "@/components/Atoms/Title";
 const Home = (): JSX.Element => (
   <Template>
     <Head>
-      <Title />
+      <Title subTitle="スタッフ一覧" />
     </Head>
-    <h1>トップページ</h1>
+    <h1>スタッフ一覧</h1>
   </Template>
 );
 
