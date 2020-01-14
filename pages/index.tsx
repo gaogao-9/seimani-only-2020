@@ -46,9 +46,11 @@ const Page: React.FC = () => {
     }
   })();
 
-  if (openingSceneContextValue.scene === OpeningScenes.Finish) {
-    router.push("/top");
-  }
+  React.useEffect(() => {
+    if (openingSceneContextValue.scene === OpeningScenes.Finish) {
+      router.push("/top");
+    }
+  }, [openingSceneContextValue.scene]);
 
   return (
     <Template>
