@@ -21,8 +21,8 @@ type SideListProps = {
 const SideList: React.FC<SideListProps> = (props: SideListProps) => (
   <div>
     <List>
-      {routes.map(({ title, href, Icon }, index) => {
-        const canButton = href !== props.route;
+      {routes.map(({ title, pathname, Icon }, index) => {
+        const canButton = pathname !== props.route;
         const AppIcon = React.useMemo(
           () => (
             <ListItemIcon>
@@ -33,7 +33,7 @@ const SideList: React.FC<SideListProps> = (props: SideListProps) => (
         );
 
         return (
-          <Link href={href} key={index}>
+          <Link href={pathname} key={index}>
             {canButton ? (
               <ListItem button={true}>
                 {AppIcon}

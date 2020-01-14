@@ -1,15 +1,29 @@
-import * as React from "react";
+import React from "react";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { MuiThemeProvider } from "@material-ui/core";
-import { theme } from "@/utils/theme";
 import { useViewportHeight } from "@/hooks/useViewportHeight";
+import { theme } from "@/utils/theme";
+import { routes } from "@/utils/routes";
+import Title from "@/components/Atoms/Title";
 
 const DefaultTemplate: React.FC = ({ children }) => {
+  const router = useRouter();
+  const [subTitle, setSubTitle] = React.useState();
+  const title = React.useMemo(() => Title({ subTitle }), [subTitle]);
+
+  React.useEffect(() => {
+    const route = routes.find(x => x.pathname === router.pathname);
+
+    setSubTitle(route?.pathname === "/top" ? "" : route?.title ?? "");
+  }, [router.pathname]);
+
   useViewportHeight();
 
   return (
     <>
       <Head>
+        {title}
         <link
           rel="stylesheet"
           type="text/css"

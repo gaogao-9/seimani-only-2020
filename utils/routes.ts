@@ -11,49 +11,49 @@ import {
 
 export type Route = {
   title: string;
-  href: string;
+  pathname: string;
   Icon: React.FC;
 };
 
 export const routes: Array<Route> = [
   {
     title: "トップページ",
-    href: "/top",
+    pathname: "/top",
     Icon: Home,
   },
   {
     title: "会場情報",
-    href: "/map",
+    pathname: "/map",
     Icon: Map,
   },
   {
     title: "参加者全般",
-    href: "/common",
+    pathname: "/common",
     Icon: Group,
   },
   {
     title: "サークル参加",
-    href: "/circle",
+    pathname: "/circle",
     Icon: Palette,
   },
   {
     title: "コスプレ参加",
-    href: "/cosplay",
+    pathname: "/cosplay",
     Icon: Dashboard,
   },
   {
     title: "サークル一覧",
-    href: "/circlelist",
+    pathname: "/circlelist",
     Icon: PermContactCalendar,
   },
   {
     title: "スタッフ一覧",
-    href: "/staff",
+    pathname: "/staff",
     Icon: SupervisedUserCircle,
   },
   {
     title: "Q&A",
-    href: "/question",
+    pathname: "/question",
     Icon: Help,
   },
 ];
