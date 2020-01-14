@@ -9,7 +9,6 @@ interface IMyApp<AppProps> extends React.FC<AppProps> {
 
 const MyApp: IMyApp<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter();
-  console.log(router.pathname);
 
   return (
     <>
