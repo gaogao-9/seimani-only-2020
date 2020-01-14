@@ -34,6 +34,7 @@ module.exports = {
         "react/prop-types": "off",
         "react/react-in-jsx-scope": "off",
         "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/interface-name-prefix": ["error", "always"],
         "emotion/jsx-import": "error",
         "emotion/no-vanilla": "error",
         "emotion/import-from-emotion": "error",
