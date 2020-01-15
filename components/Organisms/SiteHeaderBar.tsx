@@ -57,7 +57,9 @@ const SiteBar: React.FC = () => {
           wrap="nowrap"
         >
           <Grid item>
-            <Typography variant={titleVariant}>{TopLink}</Typography>
+            <Typography variant={titleVariant} component="h1">
+              {TopLink}
+            </Typography>
           </Grid>
           <Grid item>
             <StyledIconButton

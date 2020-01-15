@@ -14,6 +14,10 @@ const StyledContentWrapper = styled.div`
   width: 100%;
 `;
 
+const StyledMain = styled.main`
+  height: auto;
+`;
+
 const SiteTemplate: React.FC = ({ children, ...props }) => {
   const sideDrawerContextValue = useSideDrawerContext();
 
@@ -23,10 +27,10 @@ const SiteTemplate: React.FC = ({ children, ...props }) => {
         <SiteBackground>
           <StyledContentWrapper>
             <SiteHeaderBar />
-            <main>
+            <StyledMain>
               <CssBaseline />
               {children}
-            </main>
+            </StyledMain>
           </StyledContentWrapper>
           <SideDrawer />
         </SiteBackground>
