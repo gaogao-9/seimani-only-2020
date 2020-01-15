@@ -1,11 +1,18 @@
 import React from "react";
+import CssBaseline from "@material-ui/core/CssBaseline";
 import {
   SideDrawerContext,
   useSideDrawerContext,
 } from "@/hooks/contexts/SideDrawerContext";
 import DefaultTemplate from "@/components/Template/DefaultTemplate";
+import SiteBackground from "@/components/Atoms/SiteBackground";
 import SiteHeaderBar from "@/components/Organisms/SiteHeaderBar";
 import SideDrawer from "@/components/Organisms/SideDrawer";
+import styled from "@emotion/styled";
+
+const StyledContentWrapper = styled.div`
+  width: 100%;
+`;
 
 const SiteTemplate: React.FC = ({ children, ...props }) => {
   const sideDrawerContextValue = useSideDrawerContext();
@@ -13,9 +20,16 @@ const SiteTemplate: React.FC = ({ children, ...props }) => {
   return (
     <DefaultTemplate {...props}>
       <SideDrawerContext.Provider value={sideDrawerContextValue}>
-        <SiteHeaderBar />
-        {children}
-        <SideDrawer />
+        <SiteBackground>
+          <StyledContentWrapper>
+            <SiteHeaderBar />
+            <main>
+              <CssBaseline />
+              {children}
+            </main>
+          </StyledContentWrapper>
+          <SideDrawer />
+        </SiteBackground>
       </SideDrawerContext.Provider>
     </DefaultTemplate>
   );

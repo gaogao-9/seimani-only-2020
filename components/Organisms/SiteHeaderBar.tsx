@@ -12,7 +12,14 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { theme } from "@/utils/theme";
 import styled from "@emotion/styled";
 
+const StyledIconButton = styled(IconButton)`
+  ${theme.breakpoints.up("md")} {
+    display: none !important;
+  }
+`;
+
 const StyledLink = styled.a`
+  font-family: "Kosugi", sans-serif;
   color: inherit;
   text-decoration: inherit;
 `;
@@ -53,14 +60,14 @@ const SiteBar: React.FC = () => {
             <Typography variant={titleVariant}>{TopLink}</Typography>
           </Grid>
           <Grid item>
-            <IconButton
+            <StyledIconButton
               edge="start"
               color="inherit"
               aria-label="menu"
               onClick={onClick}
             >
               <MenuIcon />
-            </IconButton>
+            </StyledIconButton>
           </Grid>
         </Grid>
       </Toolbar>

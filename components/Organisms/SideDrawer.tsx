@@ -12,6 +12,22 @@ import Box from "@material-ui/core/Box";
 import { SideDrawerContext } from "@/hooks/contexts/SideDrawerContext";
 import { theme } from "@/utils/theme";
 import { routes } from "@/utils/routes";
+import { css } from "@emotion/core";
+import styled from "@emotion/styled";
+
+const SideDrawerWidth = 220;
+
+const paperStyle = css`
+  width: ${SideDrawerWidth}px;
+`;
+
+const StyledDrawer = styled(Drawer)`
+  width: ${SideDrawerWidth}px;
+
+  .${paperStyle.name} {
+    ${paperStyle.styles}
+  }
+`;
 
 type SideListProps = {
   route: string;
@@ -23,25 +39,21 @@ const SideList: React.FC<SideListProps> = (props: SideListProps) => (
     <List>
       {routes.map(({ title, pathname, Icon }, index) => {
         const canButton = pathname !== props.route;
-        const AppIcon = React.useMemo(
-          () => (
-            <ListItemIcon>
-              <Icon />
-            </ListItemIcon>
-          ),
-          [],
-        );
 
         return (
           <Link href={pathname} key={index}>
             {canButton ? (
               <ListItem button={true}>
-                {AppIcon}
+                <ListItemIcon>
+                  <Icon />
+                </ListItemIcon>
                 <ListItemText primary={title} />
               </ListItem>
             ) : (
               <ListItem button={false as true}>
-                {AppIcon}
+                <ListItemIcon>
+                  <Icon htmlColor="#0576c5" />
+                </ListItemIcon>
                 <ListItemText>
                   <Typography>
                     <Box component="span" color="#0576c5" fontWeight="bold">
@@ -76,14 +88,17 @@ const SideDrawer: React.FC = () => {
   const router = useRouter();
 
   return (
-    <Drawer
+    <StyledDrawer
       variant={variant}
       anchor="right"
+      classes={{
+        paper: paperStyle.name,
+      }}
       open={visibility}
       onClose={onClose}
     >
       <SideList route={router.pathname} />
-    </Drawer>
+    </StyledDrawer>
   );
 };
 

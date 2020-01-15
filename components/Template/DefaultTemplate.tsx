@@ -9,14 +9,9 @@ import Title from "@/components/Atoms/Title";
 
 const DefaultTemplate: React.FC = ({ children }) => {
   const router = useRouter();
-  const [subTitle, setSubTitle] = React.useState();
+  const route = routes.find(x => x.pathname === router.pathname);
+  const subTitle = route?.pathname === "/top" ? "" : route?.title ?? "";
   const title = React.useMemo(() => Title({ subTitle }), [subTitle]);
-
-  React.useEffect(() => {
-    const route = routes.find(x => x.pathname === router.pathname);
-
-    setSubTitle(route?.pathname === "/top" ? "" : route?.title ?? "");
-  }, [router.pathname]);
 
   useViewportHeight();
 
@@ -32,7 +27,7 @@ const DefaultTemplate: React.FC = ({ children }) => {
         <link
           rel="stylesheet"
           type="text/css"
-          href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:200|Noto+Sans+JP:100,300,400,500&display=swap"
+          href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:200|Noto+Sans+JP:100,300,400,500|Kosugi&display=swap"
         />
       </Head>
       <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>

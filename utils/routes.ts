@@ -1,3 +1,4 @@
+import { SvgIconProps } from "@material-ui/core";
 import {
   Home,
   Map,
@@ -12,7 +13,7 @@ import {
 export type Route = {
   title: string;
   pathname: string;
-  Icon: React.FC;
+  Icon: React.FC<SvgIconProps>;
 };
 
 export const routes: Array<Route> = [

@@ -1,13 +1,13 @@
 import React from "react";
-import { AppProps, AppContext } from "next/app";
+import { AppProps, AppContext, AppInitialProps } from "next/app";
 import { useRouter } from "next/router";
 import { PageTransition } from "next-page-transitions";
 
-interface IMyApp<AppProps> extends React.FC<AppProps> {
-  getInitialProps: (props: AppContext) => Promise<{ pageProps: any }>;
+export interface IApp<AppProps> extends React.FC<AppProps> {
+  getInitialProps: (props: AppContext) => Promise<AppInitialProps>;
 }
 
-const MyApp: IMyApp<AppProps> = ({ Component, pageProps }) => {
+const MyApp: IApp<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter();
 
   return (
@@ -38,7 +38,7 @@ const MyApp: IMyApp<AppProps> = ({ Component, pageProps }) => {
 MyApp.getInitialProps = async ({
   Component,
   ctx,
-}): Promise<{ pageProps: any }> => {
+}): Promise<AppInitialProps> => {
   let pageProps = {};
 
   if (Component.getInitialProps) {
