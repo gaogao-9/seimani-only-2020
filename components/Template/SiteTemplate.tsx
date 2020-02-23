@@ -9,6 +9,7 @@ import SiteBackground from "@/components/Atoms/SiteBackground";
 import SiteHeaderBar from "@/components/Organisms/SiteHeaderBar";
 import SideDrawer from "@/components/Organisms/SideDrawer";
 import styled from "@emotion/styled";
+import { theme } from "@/utils/theme";
 
 const StyledContentWrapper = styled.div`
   width: 100%;
@@ -16,7 +17,11 @@ const StyledContentWrapper = styled.div`
 
 const StyledMain = styled.main`
   height: auto;
-  padding: 10px 5px;
+  padding: 10px 0px;
+
+  ${theme.breakpoints.up("sm")} {
+    padding: 10px 5px;
+  }
 `;
 
 const SiteTemplate: React.FC = ({ children, ...props }) => {
