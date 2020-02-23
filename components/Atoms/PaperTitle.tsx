@@ -5,7 +5,7 @@ import { theme } from "@/utils/theme";
 import { FiberPin } from "@material-ui/icons";
 
 const StyledTitleWrapper = styled.div`
-  padding: 0px 10px 20px;
+  padding: 5px 10px 20px;
 `;
 
 const StyledTitleLine = styled.div`
