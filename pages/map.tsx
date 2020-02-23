@@ -40,7 +40,7 @@ const Map: React.FC = () => {
 };
 
 const DateAndTime: React.FC = () => (
-  <List subheader={<ListSubheader>イベント情報</ListSubheader>}>
+  <List subheader={<ListSubheader disableSticky>イベント情報</ListSubheader>}>
     <ListItem>
       <ListItemAvatar>
         <Avatar>
@@ -61,7 +61,7 @@ const DateAndTime: React.FC = () => (
 );
 
 const Access: React.FC = () => (
-  <List subheader={<ListSubheader>交通手段</ListSubheader>}>
+  <List subheader={<ListSubheader disableSticky>交通手段</ListSubheader>}>
     <ListItem>
       <ListItemAvatar>
         <Avatar>
