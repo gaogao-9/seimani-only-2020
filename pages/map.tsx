@@ -19,6 +19,7 @@ import {
 } from "@material-ui/icons";
 import Template from "@/components/Template/SiteTemplate";
 import PaperTitle from "@/components/Atoms/PaperTitle";
+
 const Map: React.FC = () => {
   const StyledIframe = React.useMemo(
     () => styled.iframe`
