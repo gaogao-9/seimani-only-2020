@@ -26,6 +26,7 @@ const Map: React.FC = () => {
       width: 100%;
       height: 640px;
       border: 0;
+      padding: 10px;
     `,
     [],
   );
@@ -97,10 +98,10 @@ const Page: React.FC = () => {
           <Paper>
             <PaperTitle>会場情報</PaperTitle>
             <Grid container justify="center" alignItems="center">
-              <Grid item xs={11} lg={7} xl={8}>
+              <Grid item xs={12} lg={8} xl={9}>
                 <Map />
               </Grid>
-              <Grid item xs={11} lg={4} xl={3}>
+              <Grid item xs={12} lg={4} xl={3}>
                 <DateAndTime />
                 <Access />
               </Grid>
