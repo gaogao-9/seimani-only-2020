@@ -1,14 +1,16 @@
 import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import Grid from "@material-ui/core/Grid";
+import {
+  AppBar,
+  Toolbar,
+  Grid,
+  IconButton,
+  Typography,
+  useMediaQuery,
+} from "@material-ui/core";
+import { Menu as MenuIcon } from "@material-ui/icons";
 import { SideDrawerContext } from "@/hooks/contexts/SideDrawerContext";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { theme } from "@/utils/theme";
 import styled from "@emotion/styled";
 

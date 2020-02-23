@@ -1,12 +1,15 @@
 import React from "react";
 import styled from "@emotion/styled";
-import Typography from "@material-ui/core/Typography";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { Typography, useMediaQuery } from "@material-ui/core";
 import { theme } from "@/utils/theme";
+import { FiberPin } from "@material-ui/icons";
 
-const StyledTitle = styled.div`
+const StyledTitleWrapper = styled.div`
+  padding: 0px 10px 20px;
+`;
+
+const StyledTitleLine = styled.div`
   border-bottom: #3c3c3c 1px solid;
-  margin: 20px 10px;
   padding: 5px 0;
 `;
 
@@ -16,9 +19,11 @@ const PaperTitle: React.FC = ({ ...props }) => {
   const titleVariant = isOverLG ? "h4" : isOverSM ? "h5" : "h6";
 
   return (
-    <StyledTitle>
-      <Typography variant={titleVariant} component="h2" {...props} />
-    </StyledTitle>
+    <StyledTitleWrapper>
+      <StyledTitleLine>
+        <Typography variant={titleVariant} component="h2" {...props} />
+      </StyledTitleLine>
+    </StyledTitleWrapper>
   );
 };
 

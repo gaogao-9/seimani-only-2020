@@ -16,6 +16,7 @@ const StyledContentWrapper = styled.div`
 
 const StyledMain = styled.main`
   height: auto;
+  padding: 10px 5px;
 `;
 
 const SiteTemplate: React.FC = ({ children, ...props }) => {

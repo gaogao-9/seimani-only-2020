@@ -2,17 +2,10 @@
 import { jsx, css } from "@emotion/core";
 import React from "react";
 import styled from "@emotion/styled";
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
-import Avatar from "@material-ui/core/Avatar";
-import IconButton from "@material-ui/core/IconButton";
+import { Grid, Paper, Avatar, IconButton } from "@material-ui/core";
 import { staffs } from "@/utils/staffs";
 import Template from "@/components/Template/SiteTemplate";
 import PaperTitle from "@/components/Atoms/PaperTitle";
-
-const StyledWrapper = styled(Grid)`
-  height: 100%;
-`;
 
 const StyledAvatar = styled(Avatar)`
   width: 100% !important;
@@ -48,7 +41,7 @@ const Page: React.FC = () => {
 
   return (
     <Template>
-      <StyledWrapper container justify="center" alignItems="center">
+      <Grid container justify="center" alignItems="center">
         <Grid item xs={11}>
           <Paper>
             <PaperTitle>スタッフ一覧</PaperTitle>
@@ -57,7 +50,7 @@ const Page: React.FC = () => {
             </Grid>
           </Paper>
         </Grid>
-      </StyledWrapper>
+      </Grid>
     </Template>
   );
 };

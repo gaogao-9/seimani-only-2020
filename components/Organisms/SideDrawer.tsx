@@ -1,14 +1,16 @@
 import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
-import Drawer from "@material-ui/core/Drawer";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import Typography from "@material-ui/core/Typography";
-import Box from "@material-ui/core/Box";
+import {
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Typography,
+  Box,
+  Drawer,
+  useMediaQuery,
+} from "@material-ui/core";
 import { SideDrawerContext } from "@/hooks/contexts/SideDrawerContext";
 import { theme } from "@/utils/theme";
 import { routes } from "@/utils/routes";
