@@ -18,7 +18,7 @@ const DefaultTemplate: React.FC = ({ children }) => {
   ]);
   const description = `${title}の公式サイトです`;
   const origin = "https://festia.moe/";
-  const ogpImage = `${origin}ogp.jpg`;
+  const ogpImage = `${origin}ogp_icon.jpg`;
 
   useViewportHeight();
 
@@ -26,6 +26,11 @@ const DefaultTemplate: React.FC = ({ children }) => {
     <>
       <Head>
         {titleElement}
+        <meta
+          name="viewport"
+          content="initial-scale=1.0, width=device-width"
+          key="viewport"
+        />
         <meta name="google" content="notranslate" />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="ja_JP" />
