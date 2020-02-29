@@ -56,6 +56,7 @@ const StarParticles: React.FC = () => (
               sync: false,
             },
           },
+          // eslint-disable-next-line @typescript-eslint/camelcase
           line_linked: {
             enable: false,
           },
