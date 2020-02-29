@@ -27,6 +27,7 @@ export const routes: Array<Route> = [
     pathname: "/map",
     Icon: Map,
   },
+  /*
   {
     title: "参加者全般",
     pathname: "/common",
@@ -47,14 +48,17 @@ export const routes: Array<Route> = [
     pathname: "/circlelist",
     Icon: PermContactCalendar,
   },
+  */
   {
     title: "スタッフ一覧",
     pathname: "/staff",
     Icon: SupervisedUserCircle,
   },
+  /*
   {
     title: "Q&A",
     pathname: "/question",
     Icon: Help,
   },
+  */
 ];
