@@ -19,6 +19,7 @@ const DefaultTemplate: React.FC = ({ children }) => {
     <>
       <Head>
         {title}
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <link
           rel="stylesheet"
           type="text/css"
