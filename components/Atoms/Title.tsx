@@ -1,16 +1,13 @@
 import React from "react";
 
 export type TitleProps = {
-  subTitle?: string;
+  title: string;
 };
 
-const Title: React.FC<TitleProps> = ({ subTitle, ...props }) => {
-  const title = "政剣マニフェスティアオンリー同人誌即売会 緊急交流イベント";
-  const fullTitle = subTitle ? `${title} | ${subTitle}` : title;
-
+const Title: React.FC<TitleProps> = ({ title, ...props }) => {
   return (
     <title key="title" {...props}>
-      {fullTitle}
+      {title}
     </title>
   );
 };

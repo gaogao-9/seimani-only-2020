@@ -10,15 +10,29 @@ import Title from "@/components/Atoms/Title";
 const DefaultTemplate: React.FC = ({ children }) => {
   const router = useRouter();
   const route = routes.find(x => x.pathname === router.pathname);
+  const title = "政剣マニフェスティアオンリー同人誌即売会 緊急交流イベント";
   const subTitle = route?.pathname === "/top" ? "" : route?.title ?? "";
-  const title = React.useMemo(() => Title({ subTitle }), [subTitle]);
+  const fullTitle = subTitle ? `${title} | ${subTitle}` : title;
+  const titleElement = React.useMemo(() => Title({ title: fullTitle }), [
+    fullTitle,
+  ]);
+  const description = `${title}の公式サイトです`;
+  const origin = "https://festia.moe/";
+  const ogpImage = `${origin}ogp.jpg`;
 
   useViewportHeight();
 
   return (
     <>
       <Head>
-        {title}
+        {titleElement}
+        <meta name="google" content="notranslate" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="ja_JP" />
+        <meta property="og:title" content={fullTitle} />
+        <meta property="og:url" content={origin} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={ogpImage} />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <link
           rel="stylesheet"
