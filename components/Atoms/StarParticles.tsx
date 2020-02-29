@@ -9,6 +9,11 @@ const Wrapper = styled.div`
   right: 0;
   bottom: 0;
   pointer-events: none;
+
+  & > * {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 const StarParticles: React.FC = () => (
