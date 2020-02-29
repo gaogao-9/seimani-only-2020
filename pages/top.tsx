@@ -36,7 +36,11 @@ const Page: React.FC = () => {
 
   return (
     <>
-      <Head>{TwitterScriptElement}</Head>
+      <Head>
+        {TwitterScriptElement}
+        <link rel="preload" href="/assets/img/top.jpg" as="image" />
+        <link rel="preload" href="/assets/img/top2.jpg" as="image" />
+      </Head>
       <Template>
         <Grid container justify="space-around" alignItems="center">
           <Grid item xs={11} lg={8} xl={9}>
