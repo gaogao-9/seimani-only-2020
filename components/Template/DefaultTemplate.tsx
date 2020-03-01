@@ -10,7 +10,7 @@ import Title from "@/components/Atoms/Title";
 const DefaultTemplate: React.FC = ({ children }) => {
   const router = useRouter();
   const route = routes.find(x => x.pathname === router.pathname);
-  const title = "政剣マニフェスティアオンリー同人誌即売会 緊急交流イベント";
+  const title = "政剣マニフェスティアオンリー同人誌即売会";
   const subTitle = route?.pathname === "/top" ? "" : route?.title ?? "";
   const fullTitle = subTitle ? `${title} | ${subTitle}` : title;
   const titleElement = React.useMemo(() => Title({ title: fullTitle }), [
