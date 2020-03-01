@@ -1,5 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
+import Template from "@/components/Template/DefaultTemplate";
 
 const Page: React.FC = () => {
   const router = useRouter();
@@ -8,7 +9,7 @@ const Page: React.FC = () => {
     router.push("/top");
   }, []);
 
-  return <></>;
+  return <Template />;
 };
 
 export default Page;
