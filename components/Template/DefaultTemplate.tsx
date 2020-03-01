@@ -38,6 +38,7 @@ const DefaultTemplate: React.FC = ({ children }) => {
         <meta property="og:url" content={origin} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={ogpImage} />
+        <meta name="twitter:card" content="summary" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <link
           rel="stylesheet"
