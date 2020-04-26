@@ -9,7 +9,11 @@ const Page: React.FC = () => {
     router.push("/top");
   }, []);
 
-  return <Template />;
+  return (
+    <Template>
+      <></>
+    </Template>
+  );
 };
 
 export default Page;

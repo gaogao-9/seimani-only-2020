@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import Particles from "react-particles-js";
+import Particles, { MoveDirection, OutMode } from "react-particles-js";
 
 const Wrapper = styled.div`
   position: fixed;
@@ -68,10 +68,10 @@ const StarParticles: React.FC = () => (
           move: {
             enable: true,
             speed: 3,
-            direction: "bottom",
+            direction: MoveDirection.bottom,
             random: false,
             straight: false,
-            out_mode: "out", // eslint-disable-line @typescript-eslint/camelcase
+            out_mode: OutMode.out, // eslint-disable-line @typescript-eslint/camelcase
             bounce: false,
             attract: {
               enable: false,

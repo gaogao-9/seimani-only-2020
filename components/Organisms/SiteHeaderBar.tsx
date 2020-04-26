@@ -20,8 +20,11 @@ const StyledIconButton = styled(IconButton)`
   }
 `;
 
-const StyledLink = styled.a`
+const StyledTitle = styled.span`
   font-family: "Kosugi", sans-serif;
+`;
+
+const StyledLink = styled.a`
   color: inherit;
   text-decoration: inherit;
 `;
@@ -38,11 +41,13 @@ const SiteBar: React.FC = () => {
     const title = "政剣マニフェスティアオンリー同人誌即売会 緊急交流イベント";
 
     if (isTop) {
-      return <>{title}</>;
+      return <StyledTitle>{title}</StyledTitle>;
     } else {
       return (
         <Link href="/top" passHref>
-          <StyledLink>{title}</StyledLink>
+          <StyledLink>
+            <StyledTitle>{title}</StyledTitle>
+          </StyledLink>
         </Link>
       );
     }
