@@ -16,10 +16,13 @@ const StyledContentWrapper = styled.div`
 `;
 
 const StyledMain = styled.main`
+  display: flex;
   height: auto;
+  min-height: calc(100% - 58px);
   padding: 10px 0px;
 
   ${theme.breakpoints.up("sm")} {
+    min-height: calc(100% - 64px);
     padding: 10px 5px;
   }
 `;

@@ -14,6 +14,12 @@ import { SideDrawerContext } from "@/hooks/contexts/SideDrawerContext";
 import { theme } from "@/utils/theme";
 import styled from "@emotion/styled";
 
+const Wrapper = styled(AppBar)`
+  position: relative !important;
+  color: #ffffff !important;
+  background-color: #000000 !important;
+`;
+
 const StyledIconButton = styled(IconButton)`
   ${theme.breakpoints.up("md")} {
     display: none !important;
@@ -54,7 +60,7 @@ const SiteBar: React.FC = () => {
   }, [router.pathname]);
 
   return (
-    <AppBar position="static">
+    <Wrapper position="static">
       <Toolbar>
         <Grid
           container
@@ -80,7 +86,7 @@ const SiteBar: React.FC = () => {
           </Grid>
         </Grid>
       </Toolbar>
-    </AppBar>
+    </Wrapper>
   );
 };
 

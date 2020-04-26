@@ -21,12 +21,14 @@ const SideDrawerWidth = 220;
 
 const paperStyle = css`
   width: ${SideDrawerWidth}px;
+  color: #ffffff;
+  background-color: #23252b;
 `;
 
 const StyledDrawer = styled(Drawer)`
   width: ${SideDrawerWidth}px;
 
-  .${paperStyle.name} {
+  .paper-${paperStyle.name} {
     ${paperStyle.styles}
   }
 `;
@@ -47,7 +49,7 @@ const SideList: React.FC<SideListProps> = (props: SideListProps) => (
             {canButton ? (
               <ListItem button={true}>
                 <ListItemIcon>
-                  <Icon />
+                  <Icon htmlColor="#ffffff" />
                 </ListItemIcon>
                 <ListItemText primary={title} />
               </ListItem>
@@ -94,7 +96,7 @@ const SideDrawer: React.FC = () => {
       variant={variant}
       anchor="right"
       classes={{
-        paper: paperStyle.name,
+        paper: `paper-${paperStyle.name}`,
       }}
       open={visibility}
       onClose={onClose}

@@ -2,10 +2,9 @@ import React from "react";
 import styled from "@emotion/styled";
 import { Typography, useMediaQuery } from "@material-ui/core";
 import { theme } from "@/utils/theme";
-import { FiberPin } from "@material-ui/icons";
 
 const StyledTitleWrapper = styled.div`
-  padding: 5px 10px 20px;
+  padding: 5px 15px 20px;
 `;
 
 const StyledTitleLine = styled.div`

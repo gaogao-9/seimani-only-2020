@@ -174,7 +174,7 @@ const Character: React.FC = styled.div`
 `;
 
 const CharacterA = styled(Character)`
-  background-image: url(/chara01.png);
+  background-image: url(/assets/img/op/chara01.png);
   animation: ${CharacterOpacityAnimation} 2s ease 1s 1 both,
     ${CharacterBlurAnimation} 3s linear 1s 1 both,
     ${CharacterPositionAnimation} 3s ease 1s 1 both,
@@ -182,7 +182,7 @@ const CharacterA = styled(Character)`
 `;
 
 const CharacterB = styled(Character)`
-  background-image: url(/chara02.png);
+  background-image: url(/assets/img/op/chara02.png);
   animation: ${CharacterOpacityAnimation} 2s ease 4s 1 both,
     ${CharacterBlurAnimation} 3s linear 4s 1 both reverse,
     ${CharacterPositionAnimation} 3s ease-in 4s 1 both reverse,

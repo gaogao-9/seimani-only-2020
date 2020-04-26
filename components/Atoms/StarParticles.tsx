@@ -29,13 +29,13 @@ const StarParticles: React.FC = () => (
             },
           },
           color: {
-            value: ["#ffefaa", "#afaaff", "#aaffc3", "#f9aaff", "#ffc3aa"],
+            value: "#d8d8e3",
           },
           shape: {
-            type: "star",
+            type: "circle",
             stroke: {
               width: 0,
-              color: "#72594b",
+              color: "#d8d8e3",
             },
             polygon: {
               nb_sides: 5, // eslint-disable-line @typescript-eslint/camelcase
@@ -52,10 +52,10 @@ const StarParticles: React.FC = () => (
             },
           },
           size: {
-            value: 15,
+            value: 3,
             random: true,
             anim: {
-              size_min: 3, // eslint-disable-line @typescript-eslint/camelcase
+              size_min: 1, // eslint-disable-line @typescript-eslint/camelcase
               enable: false,
               speed: 20,
               sync: false,
@@ -63,15 +63,15 @@ const StarParticles: React.FC = () => (
           },
           // eslint-disable-next-line @typescript-eslint/camelcase
           line_linked: {
-            enable: false,
+            enable: true,
           },
           move: {
             enable: true,
-            speed: 3,
-            direction: MoveDirection.bottom,
+            speed: 5,
+            direction: MoveDirection.none,
             random: false,
             straight: false,
-            out_mode: OutMode.out, // eslint-disable-line @typescript-eslint/camelcase
+            out_mode: OutMode.bounce, // eslint-disable-line @typescript-eslint/camelcase
             bounce: false,
             attract: {
               enable: false,
