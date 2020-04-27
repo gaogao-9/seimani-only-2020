@@ -56,6 +56,8 @@ const paths = [
   "/assets/img/top2.jpg",
   "/assets/img/top_sp.jpg",
   "/assets/img/top2_sp.jpg",
+  "/assets/img/bg.jpg",
+  "/assets/img/gear.png",
 ];
 
 const AnimLoading: React.FC = () => {
