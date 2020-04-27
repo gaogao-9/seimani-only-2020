@@ -11,23 +11,14 @@ const Wrapper = styled(Grid)`
   z-index: 100;
 `;
 
-const FlayerFadeinAnimation = keyframes`
+const BlurFadeinAnimation = keyframes`
   0% {
     opacity: 0;
     filter: blur(15px);
   }
-  75% {
-    opacity: 1;
-    filter: blur(3px);
-  }
-  80% {
-    opacity: 0;
-  }
-  81% {
-    opacity: 0;
-  }
   85% {
     opacity: 1;
+    filter: blur(3px);
   }
   90% {
     opacity: 0;
@@ -35,21 +26,50 @@ const FlayerFadeinAnimation = keyframes`
   }
   91% {
     opacity: 0;
-    filter: blur(0);
+    filter: blur(3px);
+  }
+  95% {
+    opacity: 1;
+    filter: blur(3px);
+  }
+  99% {
+    opacity: 0;
+    filter: blur(3px);
   }
   100% {
-    opacity: 1;
+    opacity: 0;
+    filter: blur(0px);
   }
 `;
 
-const StyledImage = styled.img`
+const FlayerFadeinAnimation = keyframes`
+0% {
+  opacity: 0;
+}
+100% {
+  opacity: 1;
+}
+`;
+
+const StyledBlurTopImage = styled.img`
   width: 100%;
   user-select: none;
   opacity: 1;
-  animation: ${FlayerFadeinAnimation} 2s linear 0.5s 1 both;
+  animation: ${BlurFadeinAnimation} 2s linear 0.5s 1 both;
+`;
+
+const StyledTopImage = styled.img`
+  width: 100%;
+  user-select: none;
+  opacity: 1;
+  animation: ${FlayerFadeinAnimation} 0.3s linear 0s 1 both;
 `;
 
 const Page: React.FC = () => {
+  const [
+    blurTopImageAnimationEnded,
+    setBlurTopImageAnimationEnded,
+  ] = React.useState(false);
   const [imageAnimationEnded, setImageAnimationEnded] = React.useState(false);
 
   const TwitterButtonElement = imageAnimationEnded ? (
@@ -83,7 +103,11 @@ const Page: React.FC = () => {
 
   const StarParticleElement = imageAnimationEnded ? <StarParticles /> : <></>;
 
-  const onImageAnimationEnd = React.useCallback(() => {
+  const onBlurTopImageAnimationEnd = React.useCallback(() => {
+    setBlurTopImageAnimationEnded(true);
+  }, []);
+
+  const onTopImageAnimationEnd = React.useCallback(() => {
     setImageAnimationEnded(true);
   }, []);
 
@@ -92,14 +116,36 @@ const Page: React.FC = () => {
       <Head>
         {TwitterScriptElement}
         <link rel="preload" href="/assets/img/top.jpg" as="image" />
+        <link rel="preload" href="/assets/img/top2.jpg" as="image" />
+        <link rel="preload" href="/assets/img/top_sp.jpg" as="image" />
+        <link rel="preload" href="/assets/img/top2_sp.jpg" as="image" />
       </Head>
       <Template>
         <Wrapper container justify="space-around" alignItems="center">
           <Grid item xs={11} lg={8} xl={9}>
-            <StyledImage
-              src="/assets/img/top.jpg"
-              onAnimationEnd={onImageAnimationEnd}
-            />
+            {!blurTopImageAnimationEnded ? (
+              <picture>
+                <source
+                  media="(max-width:960px)"
+                  srcSet="/assets/img/top_sp.jpg"
+                />
+                <StyledBlurTopImage
+                  src="/assets/img/top.jpg"
+                  onAnimationEnd={onBlurTopImageAnimationEnd}
+                />
+              </picture>
+            ) : (
+              <picture>
+                <source
+                  media="(max-width:960px)"
+                  srcSet="/assets/img/top2_sp.jpg"
+                />
+                <StyledTopImage
+                  src="/assets/img/top2.jpg"
+                  onAnimationEnd={onTopImageAnimationEnd}
+                />
+              </picture>
+            )}
           </Grid>
           <Grid
             container

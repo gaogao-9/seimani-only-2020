@@ -35,7 +35,7 @@ const Text = styled.span`
     ${FadeAnimation} 1s ease 3s 1 forwards;
 `;
 
-const AnimCharacterCutin: React.FC = () => {
+const AnimPresentsLogo: React.FC = () => {
   const [animationEndCount, setAnimationEndCount] = useState(0);
   const { setScene }: OpeningSceneContextValue = React.useContext(
     OpeningSceneContext,
@@ -65,4 +65,4 @@ const AnimCharacterCutin: React.FC = () => {
   );
 };
 
-export default AnimCharacterCutin;
+export default AnimPresentsLogo;

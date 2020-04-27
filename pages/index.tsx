@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import Template from "@/components/Template/DefaultTemplate";
 import OpeningAnimBackground from "@/components/Atoms/OpeningAnimBackground";
+import OpeningAnimLoading from "@/components/Organisms/OpeningAnimLoading";
 import OpeningAnimCharacterCutin from "@/components/Organisms/OpeningAnimCharacterCutin";
 import OpeningAnimPresentsLogo from "@/components/Organisms/OpeningAnimPresentsLogo";
 import {
@@ -14,12 +15,14 @@ import {
 const Page: React.FC = () => {
   const router = useRouter();
   const openingSceneContextValue = useOpeningSceneContext(
-    OpeningScenes.CharacterCutin,
+    OpeningScenes.Loading,
   );
   const EmptyElement: JSX.Element = React.useMemo(() => <></>, []);
 
   const SceneElement = ((): JSX.Element => {
     switch (openingSceneContextValue.scene) {
+      case OpeningScenes.Loading:
+        return <OpeningAnimLoading />;
       case OpeningScenes.CharacterCutin:
         return <OpeningAnimCharacterCutin />;
       case OpeningScenes.PresentsLogo:
