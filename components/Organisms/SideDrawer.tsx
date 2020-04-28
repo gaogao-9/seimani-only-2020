@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx } from "@emotion/core";
 import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -33,45 +35,54 @@ const StyledDrawer = styled(Drawer)`
   }
 `;
 
+const ListItemWrapperStyle = css`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+`;
+
 type SideListProps = {
   route: string;
   children?: React.ReactNode;
 };
 
 const SideList: React.FC<SideListProps> = (props: SideListProps) => (
-  <div>
-    <List>
-      {routes.map(({ title, pathname, Icon }, index) => {
-        const canButton = pathname !== props.route;
+  <List>
+    {routes.map(({ title, pathname, Icon }, index) => {
+      const canButton = pathname !== props.route;
 
-        return (
-          <Link href={pathname} key={index}>
-            {canButton ? (
-              <ListItem button={true}>
-                <ListItemIcon>
-                  <Icon htmlColor="#ffffff" />
-                </ListItemIcon>
-                <ListItemText primary={title} />
-              </ListItem>
-            ) : (
-              <ListItem button={false as true}>
-                <ListItemIcon>
-                  <Icon htmlColor="#0576c5" />
-                </ListItemIcon>
-                <ListItemText>
-                  <Typography>
-                    <Box component="span" color="#0576c5" fontWeight="bold">
-                      {title}
-                    </Box>
-                  </Typography>
-                </ListItemText>
-              </ListItem>
-            )}
+      return canButton ? (
+        <ListItem button key={index}>
+          <Link href={pathname}>
+            <a css={ListItemWrapperStyle}>
+              <ListItemIcon>
+                <Icon htmlColor="#ffffff" />
+              </ListItemIcon>
+              <ListItemText primary={title} />
+            </a>
           </Link>
-        );
-      })}
-    </List>
-  </div>
+        </ListItem>
+      ) : (
+        <ListItem key={index}>
+          <span css={ListItemWrapperStyle}>
+            <ListItemIcon>
+              <Icon htmlColor="#0576c5" />
+            </ListItemIcon>
+            <ListItemText>
+              <Typography>
+                <Box component="span" color="#0576c5" fontWeight="bold">
+                  {title}
+                </Box>
+              </Typography>
+            </ListItemText>
+          </span>
+        </ListItem>
+      );
+    })}
+  </List>
 );
 
 const SideDrawer: React.FC = () => {
