@@ -208,7 +208,7 @@ const AnimCharacterCutin: React.FC = () => {
       <Container>
         <CharacterB />
         <LeftWhiteBg>
-          <Text>ここに素敵な</Text>
+          <Text>政なる刃で</Text>
         </LeftWhiteBg>
       </Container>
       <VerticalLine />
@@ -216,7 +216,7 @@ const AnimCharacterCutin: React.FC = () => {
       <Container>
         <CharacterA />
         <RightWhiteBg onAnimationEnd={onAnimationEnd}>
-          <Text>言葉が入る</Text>
+          <Text>闇夜を切り裂け</Text>
         </RightWhiteBg>
       </Container>
     </>
