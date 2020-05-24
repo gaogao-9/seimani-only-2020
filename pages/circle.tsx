@@ -70,7 +70,7 @@ const Page: React.FC = () => {
             </PaperBody>
             <PaperSection>日程・会場</PaperSection>
             <PaperBody>
-              2020年9月21日（敬老の日・月曜日
+              2020年9月21日（敬老の日・月曜日）
               <br />
               緊急交流イベント「漕ぎ出せ！ソクバイ海Ⅲ」
               <br />
