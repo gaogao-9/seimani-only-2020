@@ -7,7 +7,7 @@ const StyledTitleWrapper = styled.div`
   padding: 5px 35px 20px;
 `;
 
-const PaperTitle: React.FC = ({ ...props }) => {
+const PaperBody: React.FC = ({ ...props }) => {
   const isOverSM = useMediaQuery(theme.breakpoints.up("sm"));
   const isOverLG = useMediaQuery(theme.breakpoints.up("lg"));
   const titleVariant = isOverLG ? "subtitle1" : isOverSM ? "body1" : "body2";
@@ -19,4 +19,4 @@ const PaperTitle: React.FC = ({ ...props }) => {
   );
 };
 
-export default PaperTitle;
+export default PaperBody;

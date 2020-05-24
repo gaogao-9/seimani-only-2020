@@ -4,7 +4,7 @@ import { Typography, useMediaQuery } from "@material-ui/core";
 import { theme } from "@/utils/theme";
 
 const StyledTitleWrapper = styled.div`
-  padding: 5px 15px 20px;
+  padding: 10px 15px 20px;
 `;
 
 const StyledTitleLine = styled.div`

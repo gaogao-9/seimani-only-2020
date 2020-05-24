@@ -7,7 +7,7 @@ const StyledTitleWrapper = styled.div`
   padding: 5px 18px 10px;
 `;
 
-const PaperTitle: React.FC = ({ ...props }) => {
+const PaperSection: React.FC = ({ ...props }) => {
   const isOverLG = useMediaQuery(theme.breakpoints.up("lg"));
   const titleVariant = isOverLG ? "h5" : "subtitle1";
 
@@ -18,4 +18,4 @@ const PaperTitle: React.FC = ({ ...props }) => {
   );
 };
 
-export default PaperTitle;
+export default PaperSection;
