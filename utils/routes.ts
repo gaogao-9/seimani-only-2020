@@ -33,11 +33,13 @@ export const routes: Array<Route> = [
     pathname: "/common",
     Icon: Group,
   },
+  */
   {
     title: "サークル参加",
     pathname: "/circle",
     Icon: Palette,
   },
+  /*
   {
     title: "コスプレ参加",
     pathname: "/cosplay",
