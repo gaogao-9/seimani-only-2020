@@ -21,6 +21,7 @@ const Bold = styled.strong`
 `;
 
 const Page: React.FC = () => {
+  const canUseForm = false; // 6/1日開放
   const [isRead, setIsRead] = React.useState(false);
   const onChecked = (eve: React.ChangeEvent<HTMLInputElement>): void =>
     setIsRead(eve.target.checked);
@@ -245,6 +246,9 @@ const Page: React.FC = () => {
           <Paper>
             <PaperTitle>サークル参加フォーム</PaperTitle>
             <PaperBody>
+              募集開始は<Bold>2020/06/01</Bold>からになります。
+            </PaperBody>
+            <PaperBody>
               <FormGroup row>
                 <FormControlLabel
                   control={
@@ -254,6 +258,7 @@ const Page: React.FC = () => {
                       color="primary"
                     />
                   }
+                  disabled={!canUseForm}
                   label="以上の内容を熟読しました。"
                 />
               </FormGroup>
@@ -262,7 +267,7 @@ const Page: React.FC = () => {
                 href="https://docs.google.com/forms/d/e/1FAIpQLSdjys5hauSxlHB5r-PmAvu6h4U0Pkwbw30INOoUAxBab0esaQ/viewform"
                 target="_blank"
                 rel="noopener noreferrer"
-                disabled={!isRead}
+                disabled={!isRead || !canUseForm}
                 variant="contained"
                 color="primary"
                 size="large"
