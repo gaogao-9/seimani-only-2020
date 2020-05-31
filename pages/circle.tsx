@@ -21,7 +21,7 @@ const Bold = styled.strong`
 `;
 
 const Page: React.FC = () => {
-  const canUseForm = false; // 6/1日開放
+  const canUseForm = true; // 6/1日開放
   const [isRead, setIsRead] = React.useState(false);
   const onChecked = (eve: React.ChangeEvent<HTMLInputElement>): void =>
     setIsRead(eve.target.checked);
