@@ -103,7 +103,7 @@ const Page: React.FC = () => {
               <br />
               ☆ 開催当日までメールで《確実に》連絡可能であること
               <br />
-              ☆&quot;戦挙権&quot;を持っている（「政剣マニフェスティア」のプレイヤーである）こと
+              ☆&quot;戦挙権&quot;を持っていた（「政剣マニフェスティア」のプレイヤーであった）こと
             </PaperBody>
             <PaperSection>サークル参加費用</PaperSection>
             <PaperBody>
@@ -147,7 +147,7 @@ const Page: React.FC = () => {
             </PaperBody>
             <PaperSection>申込期限</PaperSection>
             <PaperBody>
-              2020年7月20日（海の日・月曜日） 23:59まで
+              2020年7月20日（月曜日） 23:59まで
               <br />
               ※申込後のキャンセルはお受けできません
             </PaperBody>
