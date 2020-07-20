@@ -21,7 +21,7 @@ const Bold = styled.strong`
 `;
 
 const Page: React.FC = () => {
-  const canUseForm = true;
+  const canUseForm = false;
   const [isRead, setIsRead] = React.useState(false);
   const onChecked = (eve: React.ChangeEvent<HTMLInputElement>): void =>
     setIsRead(eve.target.checked);
@@ -246,7 +246,7 @@ const Page: React.FC = () => {
           <Paper>
             <PaperTitle>サークル参加フォーム</PaperTitle>
             <PaperBody>
-              募集開始は<Bold>2020/06/01</Bold>からになります。
+              募集は<Bold>2020/07/20</Bold>をもって終了しました。
             </PaperBody>
             <PaperBody>
               <FormGroup row>
