@@ -39,12 +39,12 @@ export const routes: Array<Route> = [
     pathname: "/circle",
     Icon: Palette,
   },
-  /*
   {
     title: "コスプレ参加",
     pathname: "/cosplay",
     Icon: Dashboard,
   },
+  /*
   {
     title: "サークル一覧",
     pathname: "/circlelist",
