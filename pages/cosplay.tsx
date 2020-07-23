@@ -115,6 +115,49 @@ const Page: React.FC = () => {
           </Paper>
           <PaperSpacer />
           <Paper>
+            <PaperTitle>プライバシーポリシー</PaperTitle>
+            <PaperBody>
+              戦挙管理委員会（以下「当会」といいます）は、個人情報の保護に関する法令等を遵守するとともに、本プライバシーポリシーを遵守します。
+            </PaperBody>
+            <PaperSection>1. 個人情報の定義</PaperSection>
+            <PaperBody>
+              個人情報とは、氏名、住所、生年月日、年齢、性別、電話番号、電子メールアドレス、IPアドレス、銀行口座番号のうち、1つあるいは2つ以上を組み合せることによって、特定の個人を識別できるものを指します。
+            </PaperBody>
+            <PaperSection>2. 個人情報の取得</PaperSection>
+            <PaperBody>
+              当会は、個人情報を、適正な手段により取得いたします。
+            </PaperBody>
+            <PaperSection>3. 個人情報の利用目的</PaperSection>
+            <PaperBody>
+              当会は、主催する即売会・イベント等において、個人情報を、以下の目的で利用し、ご本人の同意を頂いた範囲内においてのみ取り扱います。
+              <br />
+              (1) 即売会・イベント等の運営に必要な情報を処理するため
+              <br />
+              (2) 即売会・イベント等に関する重要事項を参加者に連絡するため
+              <br />
+              (3) 即売会・イベント等の運営上のトラブルを解決するため
+            </PaperBody>
+            <PaperSection>4. 個人情報の第三者への提供</PaperSection>
+            <PaperBody>
+              当会は、個人情報保護法その他の法令により認められる事由がある場合を除き、ご本人の同意なくして、第三者に提供・開示しません。
+            </PaperBody>
+            <PaperSection>5. 個人情報の安全管理</PaperSection>
+            <PaperBody>
+              当会は、個人情報を適切に管理し、個人情報の漏えい、滅失、毀損等に対する予防措置を講じます。
+            </PaperBody>
+            <PaperSection>6. 個人情報の開示、訂正、苦情等</PaperSection>
+            <PaperBody>
+              当会は、個人情報について、開示、訂正、苦情等について、ご本人からのお申出があった場合には、お申出頂いた方がご本人であることを確認の上、個人情報保護法の定めに従い、速やかに対応いたします。
+            </PaperBody>
+            <PaperSection>7. プライバシーポリシーの変更</PaperSection>
+            <PaperBody>
+              当会は、必要に応じて、本プライバシーポリシーの内容を改定することがあります。その場合、変更箇所を速やかに公表するものとします。{" "}
+            </PaperBody>
+            <PaperSection>8. お問い合わせ窓口</PaperSection>
+            <PaperBody>戦挙管理委員会 seimani.only[at]gmail.com</PaperBody>
+          </Paper>
+          <PaperSpacer />
+          <Paper>
             <PaperTitle>コスプレ事前登録フォーム</PaperTitle>
             <PaperBody>
               <FormGroup row>
