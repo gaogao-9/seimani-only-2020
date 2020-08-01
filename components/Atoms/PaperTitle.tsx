@@ -13,6 +13,7 @@ const StyledTitleLine = styled.div`
 `;
 
 const PaperTitle: React.FC<ComponentPropsWithoutRef<"div">> = ({
+  children,
   ...props
 }) => {
   const isOverSM = useMediaQuery(theme.breakpoints.up("sm"));
@@ -21,7 +22,9 @@ const PaperTitle: React.FC<ComponentPropsWithoutRef<"div">> = ({
   return (
     <StyledTitleWrapper {...props}>
       <StyledTitleLine>
-        <Typography variant={titleVariant} component="h2" />
+        <Typography variant={titleVariant} component="h2">
+          {children}
+        </Typography>
       </StyledTitleLine>
     </StyledTitleWrapper>
   );
