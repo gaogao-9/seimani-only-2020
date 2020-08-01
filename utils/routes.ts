@@ -9,6 +9,7 @@ import {
   SupervisedUserCircle,
   Help,
   LocalHospital,
+  Web,
 } from "@material-ui/icons";
 
 export type Route = {
@@ -52,6 +53,11 @@ export const routes: Array<Route> = [
     Icon: PermContactCalendar,
   },
   */
+  {
+    title: "エアイベント",
+    pathname: "/online_event",
+    Icon: Web,
+  },
   {
     title: "感染症対策",
     pathname: "/infection",
