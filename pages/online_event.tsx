@@ -9,6 +9,10 @@ import PaperSection from "@/components/Atoms/PaperSection";
 import PaperBody from "@/components/Atoms/PaperBody";
 import PaperSpacer from "@/components/Atoms/PaperSpacer";
 
+const Bold = styled.strong`
+  font-weight: 500;
+`;
+
 const Page: React.FC = () => {
   return (
     <Template>
@@ -209,7 +213,18 @@ const Page: React.FC = () => {
               <br />
               ・サークルカットとサークルコメントはここで指定できます
               <br />
-              &nbsp;&nbsp;（サークルカットのテンプレート）※リアル会場版のテンプレートと若干異なります。ご注意ください
+              &nbsp;&nbsp;
+              <a
+                href="/assets/bin/cut_air.zip"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                サークルカットのテンプレート
+              </a>
+              &nbsp;
+              <Bold>
+                ※リアル会場版のテンプレートと若干異なります。ご注意ください
+              </Bold>
               <br />
               ・頒布作品と頒布価格、納品数を指定してください
               <br />
