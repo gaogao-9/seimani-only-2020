@@ -67,13 +67,13 @@ const Page: React.FC = () => {
               <br />
               ・全国、全世界、どこからでも参加可能！
               <br />
-              &nbsp;&nbsp;（日本国外の総理の皆さんは海外転送サービス
+              &nbsp;&nbsp;（日本国外の総理の皆さんは
               <a
                 href="https://www.melonbooks.co.jp/special/b/0/service/tenso/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                https://www.melonbooks.co.jp/special/b/0/service/tenso
+                海外転送サービス
               </a>
               などをご利用ください）
               <br />
@@ -184,7 +184,7 @@ const Page: React.FC = () => {
               &quot;戦挙権&quot;を持っていた（「政剣マニフェスティア」のプレイヤーであった）こと
             </PaperBody>
             <PaperSection>参加登録〆切</PaperSection>
-            <PaperBody>9月16日（水）（23:59を予定）</PaperBody>
+            <PaperBody>9月16日（水）23:59</PaperBody>
             <PaperSection>参加手順とスケジュール</PaperSection>
             <PaperBody>
               ・9月16日（水）23:59まで
@@ -246,7 +246,7 @@ const Page: React.FC = () => {
               ・ハッシュタグ&nbsp;#アイムソウリー2020&nbsp;で盛り上げよう！
               <br />
               <br />
-              ・9月2?日（？）
+              ・9月27日（日）
               <br />
               ⑥在庫返送ご希望の場合、返送開始
               <br />
