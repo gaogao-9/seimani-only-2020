@@ -29,13 +29,11 @@ export const routes: Array<Route> = [
     pathname: "/map",
     Icon: Map,
   },
-  /*
   {
     title: "参加者全般",
     pathname: "/common",
     Icon: Group,
   },
-  */
   {
     title: "サークル参加",
     pathname: "/circle",
@@ -46,13 +44,11 @@ export const routes: Array<Route> = [
     pathname: "/cosplay",
     Icon: Dashboard,
   },
-  /*
   {
     title: "サークル一覧",
     pathname: "/circlelist",
     Icon: PermContactCalendar,
   },
-  */
   {
     title: "エアイベント",
     pathname: "/online_event",

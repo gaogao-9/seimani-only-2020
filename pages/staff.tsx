@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, css } from "@emotion/core";
+import { jsx } from "@emotion/core";
 import React from "react";
 import styled from "@emotion/styled";
 import { Grid, Paper, Avatar, IconButton } from "@material-ui/core";

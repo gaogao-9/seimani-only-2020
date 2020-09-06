@@ -12,7 +12,7 @@ export const createMediaQuery = <TBreakpoint extends { [k in string]: number }>(
     config.lt && `(max-width: ${bp[config.lt]}px)`,
     config.gt && `(min-width: ${bp[config.gt]}px)`,
   ]
-    .filter(x => x)
+    .filter((x) => x)
     .join(" and ");
 
   return `@media ${query}`;

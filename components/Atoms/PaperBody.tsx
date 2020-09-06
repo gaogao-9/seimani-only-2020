@@ -14,7 +14,7 @@ const PaperBody: React.FC = ({ ...props }) => {
 
   return (
     <StyledTitleWrapper>
-      <Typography variant={titleVariant} component="p" {...props} />
+      <Typography variant={titleVariant} component="div" {...props} />
     </StyledTitleWrapper>
   );
 };

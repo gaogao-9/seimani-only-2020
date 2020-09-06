@@ -20,6 +20,7 @@ const StyledMain = styled.main`
   height: auto;
   min-height: calc(100% - 58px);
   padding: 10px 0px;
+  overflow-wrap: break-word;
 
   ${theme.breakpoints.up("sm")} {
     min-height: calc(100% - 64px);
