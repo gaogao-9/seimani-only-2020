@@ -38,7 +38,7 @@ const Page: React.FC = () => {
             <PaperBody>
               一般参加を予定される総理の皆さんは、下記の諸注意をお読みいただいた上でご参加ください。
               <br />
-              なお、ご不明な点がございましたら、お気軽に主催メールアドレス宛にお問い合わせください。。
+              なお、ご不明な点がございましたら、お気軽に主催メールアドレス宛にお問い合わせください。
             </PaperBody>
             <PaperSection>感染症対策とイベント開催について</PaperSection>
             <PaperBody>
@@ -120,10 +120,20 @@ const Page: React.FC = () => {
             <PaperSection>参加費</PaperSection>
             <PaperBody>
               即売会参加 500円（入場特典アイテム兼入場証をお渡しいたします）
+              <br />
+              お支払い方法として、現金の他に「pixiv&nbsp;pay」を導入いたします。お支払いの際にお申し付けください。
+              <br />
+              <a
+                href="https://pay.pixiv.net/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://pay.pixiv.net/
+              </a>
             </PaperBody>
             <PaperSection>再入場方法</PaperSection>
             <PaperBody>
-              イベント時間中は、各階会場入口の戦挙管理委員（スタッフ）に入場証をお見せください。
+              イベント時間中は、会場入口の戦挙管理委員（スタッフ）に入場証をお見せください。
             </PaperBody>
             <PaperSection>事前登録と入場整理へのご協力のお願い</PaperSection>
             <PaperBody>
@@ -205,6 +215,10 @@ const Page: React.FC = () => {
               ・会場外における事故・トラブルにつきまして当イベント主催者は保証できません。ご来場、ご帰宅の際はご注意ください。
               <br />
               コスプレ諸注意は コスプレ参加者向けのページ に掲載しております。
+              <br />
+              <Link href="/cosplay">
+                <a>https://festia.moe/cosplay</a>
+              </Link>
               <br />
               コスプレ参加予定の方はご一読ください。
               <br />
