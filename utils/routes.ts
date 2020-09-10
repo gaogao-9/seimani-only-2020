@@ -10,6 +10,7 @@ import {
   Help,
   LocalHospital,
   Web,
+  Event,
 } from "@material-ui/icons";
 
 export type Route = {
@@ -48,6 +49,11 @@ export const routes: Array<Route> = [
     title: "サークル一覧",
     pathname: "/circlelist",
     Icon: PermContactCalendar,
+  },
+  {
+    title: "現地イベント",
+    pathname: "/event",
+    Icon: Event,
   },
   {
     title: "エアイベント",

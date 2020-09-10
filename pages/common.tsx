@@ -10,24 +10,27 @@ import {
   TableBody,
   TableRow,
   TableCell,
-  Box,
-  Avatar,
   Button,
+  FormGroup,
+  FormControlLabel,
+  Checkbox,
 } from "@material-ui/core";
 import Template from "@/components/Template/SiteTemplate";
 import PaperTitle from "@/components/Atoms/PaperTitle";
 import PaperSection from "@/components/Atoms/PaperSection";
 import PaperBody from "@/components/Atoms/PaperBody";
+import PaperSpacer from "@/components/Atoms/PaperSpacer";
 
-const StyledAvatar = styled(Avatar)`
-  width: 100% !important;
-  max-width: 300px;
-  height: 100% !important;
-  max-height: 300px;
-  border-radius: 0 !important;
+const Bold = styled.strong`
+  font-weight: 500;
 `;
 
 const Page: React.FC = () => {
+  const canUseForm = true;
+  const [isRead, setIsRead] = React.useState(false);
+  const onChecked = (eve: React.ChangeEvent<HTMLInputElement>): void =>
+    setIsRead(eve.target.checked);
+
   return (
     <Template>
       <Grid container justify="center" alignItems="center">
@@ -68,52 +71,50 @@ const Page: React.FC = () => {
             </PaperBody>
             <PaperSection>イベントスケジュール</PaperSection>
             <PaperBody>
-              <Box>
-                <Table>
-                  <TableBody>
-                    <TableRow>
-                      <TableCell width={80}>10:00</TableCell>
-                      <TableCell>
-                        サークル参加総理入場開始
-                        <br />
-                        【更衣室】開場
-                      </TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell>11:30</TableCell>
-                      <TableCell>
-                        コスプレ一般参加総理入場開始
-                        <br />
-                        一般参加総理向け整理券配布開始
-                      </TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell>12:00</TableCell>
-                      <TableCell>【即売会】開始</TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell>15:00</TableCell>
-                      <TableCell>
-                        【即売会】終了
-                        <br />
-                        【宅急便】受付開始
-                      </TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell>16:00</TableCell>
-                      <TableCell>【宅急便】受付終了</TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell>18:00</TableCell>
-                      <TableCell>
-                        【会場】完全撤収
-                        <br />
-                        【更衣室】閉鎖
-                      </TableCell>
-                    </TableRow>
-                  </TableBody>
-                </Table>
-              </Box>
+              <Table>
+                <TableBody>
+                  <TableRow>
+                    <TableCell width={80}>10:00</TableCell>
+                    <TableCell>
+                      サークル参加総理入場開始
+                      <br />
+                      【更衣室】開場
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>11:30</TableCell>
+                    <TableCell>
+                      コスプレ一般参加総理入場開始
+                      <br />
+                      一般参加総理向け整理券配布開始
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>12:00</TableCell>
+                    <TableCell>【即売会】開始</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>15:00</TableCell>
+                    <TableCell>
+                      【即売会】終了
+                      <br />
+                      【宅急便】受付開始
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>16:00</TableCell>
+                    <TableCell>【宅急便】受付終了</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>18:00</TableCell>
+                    <TableCell>
+                      【会場】完全撤収
+                      <br />
+                      【更衣室】閉鎖
+                    </TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
               <br />
               ※スケジュールは変更になることがあります
             </PaperBody>
@@ -236,54 +237,79 @@ const Page: React.FC = () => {
               <br />
               会場内で頒布行為をしたい方は是非ともサークル参加を！
             </PaperBody>
-            <PaperSection>色紙大募集！</PaperSection>
+          </Paper>
+          <PaperSpacer />
+          <Paper>
+            <PaperTitle>プライバシーポリシー</PaperTitle>
             <PaperBody>
-              今回は全国の総理の皆さんから色紙を募集します！
-              <br />
-              会場を政霊たちのイラストで華やかに飾りましょう！
-              <br />
-              応募条件は下記画像をご確認ください。
-              <br />
-              <Button
-                href="/assets/img/illust_card/description.png"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <StyledAvatar src="/assets/img/illust_card/description.png" />
-              </Button>
-              <br />
-              ・色紙の大きさは自由
-              <br />
-              ・応募枚数の制限なし
-              <br />
-              ・モノクロ、カラーいずれもOK
-              <br />
-              ・年齢制限イラストはNG
-              <br />
-              ・会場に来られなくても応募可能！
-              <br />
-              ・色紙はイベント中に一定時間飾った後、参加者の皆さんに来場プレゼントとしてお渡しします
-              <br />
-              <br />
-              ・会場に来られない方は、下記の送り先にお送りください！
-              <br />
-              （運送業者はヤマト運輸のみ受付となります。ご了承ください）
-              <br />
-              <Button
-                href="/assets/img/illust_card/address.jpg"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <StyledAvatar src="/assets/img/illust_card/address.jpg" />
-              </Button>
+              戦挙管理委員会（以下「当会」といいます）は、個人情報の保護に関する法令等を遵守するとともに、本プライバシーポリシーを遵守します。
             </PaperBody>
-            <PaperSection>会場限定グッズくじ実施！</PaperSection>
+            <PaperSection>1. 個人情報の定義</PaperSection>
             <PaperBody>
-              過去のメインビジュアルを使用したタペストリーや、デフォルメキャラクターのアクリルスタンドなどを、ハズレなしくじで入手するチャンス！
+              個人情報とは、氏名、住所、生年月日、年齢、性別、電話番号、電子メールアドレス、IPアドレス、銀行口座番号のうち、1つあるいは2つ以上を組み合せることによって、特定の個人を識別できるものを指します。
+            </PaperBody>
+            <PaperSection>2. 個人情報の取得</PaperSection>
+            <PaperBody>
+              当会は、個人情報を、適正な手段により取得いたします。
+            </PaperBody>
+            <PaperSection>3. 個人情報の利用目的</PaperSection>
+            <PaperBody>
+              当会は、主催する即売会・イベント等において、個人情報を、以下の目的で利用し、ご本人の同意を頂いた範囲内においてのみ取り扱います。
               <br />
-              ラストワン賞も……？
+              (1) 即売会・イベント等の運営に必要な情報を処理するため
               <br />
-              お楽しみに！
+              (2) 即売会・イベント等に関する重要事項を参加者に連絡するため
+              <br />
+              (3) 即売会・イベント等の運営上のトラブルを解決するため
+            </PaperBody>
+            <PaperSection>4. 個人情報の第三者への提供</PaperSection>
+            <PaperBody>
+              当会は、個人情報保護法その他の法令により認められる事由がある場合を除き、ご本人の同意なくして、第三者に提供・開示しません。
+            </PaperBody>
+            <PaperSection>5. 個人情報の安全管理</PaperSection>
+            <PaperBody>
+              当会は、個人情報を適切に管理し、個人情報の漏えい、滅失、毀損等に対する予防措置を講じます。
+            </PaperBody>
+            <PaperSection>6. 個人情報の開示、訂正、苦情等</PaperSection>
+            <PaperBody>
+              当会は、個人情報について、開示、訂正、苦情等について、ご本人からのお申出があった場合には、お申出頂いた方がご本人であることを確認の上、個人情報保護法の定めに従い、速やかに対応いたします。
+            </PaperBody>
+            <PaperSection>7. プライバシーポリシーの変更</PaperSection>
+            <PaperBody>
+              当会は、必要に応じて、本プライバシーポリシーの内容を改定することがあります。その場合、変更箇所を速やかに公表するものとします。{" "}
+            </PaperBody>
+            <PaperSection>8. お問い合わせ窓口</PaperSection>
+            <PaperBody>戦挙管理委員会 seimani.only[at]gmail.com</PaperBody>
+          </Paper>
+          <PaperSpacer />
+          <Paper>
+            <PaperTitle>参加者事前登録フォーム</PaperTitle>
+            <PaperBody>
+              <FormGroup row>
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={isRead}
+                      onChange={onChecked}
+                      color="primary"
+                    />
+                  }
+                  disabled={!canUseForm}
+                  label="以上の内容を熟読しました。"
+                />
+              </FormGroup>
+              <br />
+              <Button
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdjys5hauSxlHB5r-PmAvu6h4U0Pkwbw30INOoUAxBab0esaQ/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
+                disabled={!isRead || !canUseForm}
+                variant="contained"
+                color="primary"
+                size="large"
+              >
+                参加者事前登録を行う
+              </Button>
             </PaperBody>
           </Paper>
         </Grid>

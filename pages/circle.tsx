@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 import React from "react";
+import Link from "next/link";
 import {
   Grid,
   Paper,
@@ -8,6 +9,10 @@ import {
   FormControlLabel,
   Checkbox,
   Button,
+  Table,
+  TableBody,
+  TableRow,
+  TableCell,
 } from "@material-ui/core";
 import styled from "@emotion/styled";
 import Template from "@/components/Template/SiteTemplate";
@@ -77,25 +82,63 @@ const Page: React.FC = () => {
               <br />
               ハイライフプラザいたばし
             </PaperBody>
-            <PaperSection>開催当日のスケジュール（予定）</PaperSection>
+            <PaperSection>イベントスケジュール</PaperSection>
             <PaperBody>
-              09:00〜 会場設営
+              <Table>
+                <TableBody>
+                  <TableRow>
+                    <TableCell width={80}>10:00</TableCell>
+                    <TableCell>
+                      サークル参加総理入場開始
+                      <br />
+                      【更衣室】開場
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>11:30</TableCell>
+                    <TableCell>
+                      コスプレ一般参加総理入場開始
+                      <br />
+                      一般参加総理向け整理券配布開始
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>12:00</TableCell>
+                    <TableCell>【即売会】開始</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>15:00</TableCell>
+                    <TableCell>
+                      【即売会】終了
+                      <br />
+                      【宅急便】受付開始
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>16:00</TableCell>
+                    <TableCell>【宅急便】受付終了</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>18:00</TableCell>
+                    <TableCell>
+                      【会場】完全撤収
+                      <br />
+                      【更衣室】閉鎖
+                    </TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
               <br />
-              10:00〜 サークル入場開始
+              ※スケジュールは変更される可能性があります
               <br />
-              12:00 【即売会開始】
               <br />
-              14:30 【即売会終了】宅急便受付開始
+              コスプレ諸注意は コスプレ参加者向けのページ に掲載しております。
               <br />
-              15:30 【アフターイベント開始】
+              <Link href="/cosplay">
+                <a>https://festia.moe/cosplay</a>
+              </Link>
               <br />
-              17:30 【アフターイベント終了】
-              <br />
-              〜18:00 会場撤収
-              <br />
-              ※スケジュールは変更になることがあります
-              <br />
-              ※コスプレについては現在検討中です
+              コスプレ参加予定の方はご一読ください。
             </PaperBody>
             <PaperSection>サークル参加資格</PaperSection>
             <PaperBody>
