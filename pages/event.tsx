@@ -72,6 +72,9 @@ const Page: React.FC = () => {
               >
                 <StyledAvatar src="/assets/img/event/address.jpg" />
               </Button>
+              <br />
+              <br />
+              【受付期間：9月16日（水）～9月20日（日）】
             </PaperBody>
             <PaperSection>会場限定グッズくじ実施！</PaperSection>
             <PaperBody>
