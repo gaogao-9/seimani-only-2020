@@ -310,7 +310,7 @@ const Page: React.FC = () => {
               </FormGroup>
               <br />
               <Button
-                href="https://docs.google.com/forms/d/e/1FAIpQLSdjys5hauSxlHB5r-PmAvu6h4U0Pkwbw30INOoUAxBab0esaQ/viewform"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSf6MMIuR4WyZruI05P2F9bNil6E4KXzksI4c6FcIszn6mIV_g/viewform"
                 target="_blank"
                 rel="noopener noreferrer"
                 disabled={!isRead || !canUseForm}
