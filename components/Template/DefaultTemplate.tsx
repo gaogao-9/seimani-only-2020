@@ -18,7 +18,7 @@ const DefaultTemplate: React.FC = ({ children }) => {
     fullTitle,
   ]);
   const description = `${title}の公式サイトです`;
-  const origin = "https://festia.moe/";
+  const origin = "https://only2020.festia.moe/";
   const ogpImage = `${origin}ogp_icon.jpg`;
 
   useViewportHeight();
